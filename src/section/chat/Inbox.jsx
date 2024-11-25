@@ -28,7 +28,22 @@ export default function Inbox() {
       </div>
 
       {/* list of message */}
-      <div className="max-h-full space-y-3.5 overflow-auto no-scrollbar px-6 py-7.5 grow"></div>
+      <div className="max-h-full space-y-3.5 overflow-auto no-scrollbar px-6 py-7.5 grow">
+        <div className="max-w-125">
+          <p className="mb-2.5 text-sm font-medium">Andri Thomas</p>
+          <div className="mb-2.5 rounded-2xl rounded-tl-none bg-gray px-5 py-3 dark:bg-boxdark-2">
+            <p>I want to make an appointment tommarow 2pm to 5pm</p>
+          </div>
+          <p className="text-xs">1:55pm</p>
+        </div>
+
+        <div className="max-w-125 ml-auto">
+          <div className="mb-2.5 rounded-2xl rounded-br-none bg-primary px-5 py-3">
+            <p className="text-white">Hello, I will check the schedule and inform you</p>
+          </div>
+          <p className="text-xs">1:57pm</p>
+        </div>
+      </div>
 
       {/* input section */}
       <div className="sticky bottom-0 border-t border-stroke bg-white px-6 py-5 dark:border-strokedark dark:bg-boxdark">

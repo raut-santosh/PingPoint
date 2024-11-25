@@ -1,5 +1,6 @@
 import { Chat, SignOut } from '@phosphor-icons/react'
 import React from 'react'
+import DarkModeSwitcher from '../../components/DarkModeSwitcher'
 
 export default function
     () {
@@ -11,7 +12,8 @@ export default function
 
             <div className="flex flex-col grow"></div>
 
-            <div className="">
+            <div className="space-y-4.5">
+                <DarkModeSwitcher />
                 <div className="mx-auto border rounded-md border-stroke p-2 dark:border-stroke-dark hover:bg-stone-100 hover:cursor-pointer">
                     <SignOut size={24} />
                 </div>
