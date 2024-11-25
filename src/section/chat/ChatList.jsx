@@ -73,7 +73,7 @@ export default function ChatList() {
                     </button>
                 </form>
 
-                <div className="no-scrollbar overflow-auto max-h-full">
+                <div className="no-scrollbar overflow-auto max-h-full space-y-2.5">
                     {/* Chat List items */}
                     {List.map((object, item) => {
                         return (

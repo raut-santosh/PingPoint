@@ -1,5 +1,5 @@
 import React from 'react'
-import { ChatList, Sidebar } from '../section/chat'
+import { ChatList, MessageInbox, Sidebar } from '../section/chat'
 
 export default function Messages() {
   return (
@@ -13,6 +13,7 @@ export default function Messages() {
 
 
         {/* Inbox */}
+        <MessageInbox />
       </div>
     </div>
   )
