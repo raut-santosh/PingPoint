@@ -1,10 +1,20 @@
-import { Routes, Route } from "react-router-dom"
-import Messages from "./pages/Messages"
-import Login from "./pages/auth/Login"
-import SignUp from "./pages/auth/SignUp"
-import Verification from "./pages/auth/Verification"
+import { Routes, Route } from "react-router-dom";
+import Messages from "./pages/Messages";
+import Login from "./pages/auth/Login";
+import SignUp from "./pages/auth/SignUp";
+import Verification from "./pages/auth/Verification";
+import { useEffect } from "react";
 
 function App() {
+  useEffect(() => {
+    const colorMode = JSON.parse(window.localStorage.getItem("color-theme"));
+
+    const className = "dark";
+    const bodyClass = window.document.body.classList;
+    colorMode === "dark"
+      ? bodyClass.add(className)
+      : bodyClass.remove(className);
+  }, []);
 
   return (
     <>
@@ -15,7 +25,7 @@ function App() {
         <Route path="/auth/verify" element={<Verification />} />
       </Routes>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
