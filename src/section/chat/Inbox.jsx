@@ -4,6 +4,7 @@ import {
   DotsThree,
   Gif,
   LinkSimple,
+  Microphone,
   PaperPlaneTilt,
   Phone,
   Smiley,
@@ -13,11 +14,15 @@ import Dropdown from "../../components/Dropdown";
 import EmojiPicker from "../../components/EmojiPicker";
 import UserInfo from "./UserInfo";
 import Giphy from "../../components/Giphy";
+import { useDispatch } from "react-redux";
+import { toggleAudioModal } from "../../redux/slices/app";
 
 export default function Inbox() {
   const [userInfoOpen, setUserInfoOpen] = useState(false);
 
   const [gifOpen, setGifOpen] = useState(false);
+
+  const dispatch = useDispatch();
 
   const handleToggleGif = (e) => {
     e.preventDefault();
@@ -27,6 +32,11 @@ export default function Inbox() {
   const handleToggleUserInfo = () => {
     setUserInfoOpen((prev) => !prev);
   };
+
+  const handleMicClick = (e) => {
+    e.preventDefault();
+    dispatch(toggleAudioModal(true))
+  }
   return (
     <>
       <div
@@ -93,6 +103,9 @@ export default function Inbox() {
               />
 
               <div className="absolute pt-1 right-5 top-1/2 -translate-y-1/2 items-center justify-end space-x-4">
+                <button className="hover:text-primary" onClick={handleMicClick}>
+                  <Microphone size={20} />
+                </button>
                 <button className="hover:text-primary">
                   <LinkSimple size={20} />
                 </button>

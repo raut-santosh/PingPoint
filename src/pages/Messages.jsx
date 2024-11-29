@@ -1,6 +1,7 @@
 import React from 'react'
 import { ChatList, MessageInbox, Sidebar } from '../section/chat'
 import GifModal from '../components/GifModal'
+import VoiceRecorder from '../components/VoiceRecorder'
 
 export default function Messages() {
   return (
@@ -18,6 +19,7 @@ export default function Messages() {
       </div>
 
       <GifModal />
+      <VoiceRecorder />
     </div>
   )
 }
