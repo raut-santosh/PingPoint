@@ -1,6 +1,9 @@
 import { combineReducers } from '@reduxjs/toolkit';
 import storage from 'redux-persist/lib/storage'
 
+// slices
+import appReducer from './slices/app'
+
 
 const rootPersistConfig = {
     key: 'root',
@@ -9,7 +12,7 @@ const rootPersistConfig = {
 }
 
 const rootReducer = combineReducers({
-    // TODO => create and map reducers
+    app: appReducer,
 })
 
 export {rootPersistConfig, rootReducer};

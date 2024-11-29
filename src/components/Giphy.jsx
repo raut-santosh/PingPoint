@@ -3,6 +3,8 @@ import { Grid } from "@giphy/react-components";
 import { GiphyFetch } from "@giphy/js-fetch-api";
 import _ from "lodash";
 import { MagnifyingGlass } from "@phosphor-icons/react";
+import { useDispatch } from "react-redux";
+import { toggleGifModal } from "../redux/slices/app";
 
 const gf = new GiphyFetch("t1wK5qsykdVF8BasoZwtvMDH2Jk55vAi");
 
@@ -12,6 +14,8 @@ export default function Giphy() {
   const [value, setValue] = useState("");
   const [error, setError] = useState(false);
   const [gifs, setGifs] = useState([]);
+
+  const dispatch = useDispatch();
 
   const fetchGifs = async (offset) => {
     return gf.search(value, { offset, limit: 10 });
@@ -52,6 +56,10 @@ export default function Giphy() {
     console.log(gif);
     const gifUrl = gif.images.original.url;
     console.log(gifUrl);
+    dispatch(toggleGifModal({
+      value: true,
+      url: gifUrl,
+    }))
   };
 
   return (
