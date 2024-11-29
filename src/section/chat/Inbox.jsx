@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import User01 from "../../images/user/user-01.png";
 import {
   DotsThree,
+  Gif,
   LinkSimple,
   PaperPlaneTilt,
   Phone,
@@ -15,6 +16,14 @@ import Giphy from "../../components/Giphy";
 
 export default function Inbox() {
   const [userInfoOpen, setUserInfoOpen] = useState(false);
+
+  const [gifOpen, setGifOpen] = useState(false);
+
+  const handleToggleGif = (e) => {
+    e.preventDefault();
+    setGifOpen((prev) =>!prev);
+  }
+
   const handleToggleUserInfo = () => {
     setUserInfoOpen((prev) => !prev);
   };
@@ -87,6 +96,9 @@ export default function Inbox() {
                 <button className="hover:text-primary">
                   <LinkSimple size={20} />
                 </button>
+                <button className="hover:text-primary" onClick={handleToggleGif}>
+                  <Gif size={20} />
+                </button>
                 <button className="hover:text-primary">
                   <EmojiPicker />
                 </button>
@@ -97,7 +109,8 @@ export default function Inbox() {
               <PaperPlaneTilt size={24} weight="bold" />
             </button>
           </form>
-          <Giphy />
+          {gifOpen && <Giphy />}
+          
         </div>
       </div>
 

@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { Grid } from "@giphy/react-components";
 import { GiphyFetch } from "@giphy/js-fetch-api";
 import _ from "lodash";
+import { MagnifyingGlass } from "@phosphor-icons/react";
 
 const gf = new GiphyFetch("t1wK5qsykdVF8BasoZwtvMDH2Jk55vAi");
 
@@ -51,14 +52,14 @@ export default function Giphy() {
     console.log(gif);
     const gifUrl = gif.images.original.url;
     console.log(gifUrl);
-  }
+  };
 
   return (
     <div ref={gridRef} className="w-full mt-3">
       <input
         type="text"
         placeholder="Search for Gif..."
-        className="w-full border border-stroke rounded-md p-2 mb-2 outline-none"
+        className="w-full border border-stroke rounded-md p-2 mb-2 outline-none bg-transparent dark:border-strokedark"
         onChange={(e) => {
           setValue(e.target.value);
           debouncedFetchGifs();
@@ -70,15 +71,24 @@ export default function Giphy() {
       {error && <p className="text-red">Error: {error}</p>}
 
       <div className="h-48 overflow-auto no-scrollbar">
-        <Grid
-          width={gridRef.current?.offsetWidth}
-          columns={8}
-          gutter={6}
-          fetchGifs={fetchGifs}
-          key={value}
-          onGifClick={handleGifClick}
-          data={gifs}
-        />
+        {gifs.length > 0 ? (
+          <Grid
+            width={gridRef.current?.offsetWidth}
+            columns={8}
+            gutter={6}
+            fetchGifs={fetchGifs}
+            key={value}
+            onGifClick={handleGifClick}
+            data={gifs}
+          />
+        ) : (
+          <div className="flex flex-col items-center justify-center h-full space-y-2">
+            <MagnifyingGlass size={40} weight="bold" />
+            <span className="text-xl text-black dark:text-white font-semibold">
+                Please search for any Gif
+            </span>
+          </div>
+        )}
       </div>
     </div>
   );
