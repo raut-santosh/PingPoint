@@ -11,6 +11,7 @@ import {
 import Dropdown from "../../components/Dropdown";
 import EmojiPicker from "../../components/EmojiPicker";
 import UserInfo from "./UserInfo";
+import Giphy from "../../components/Giphy";
 
 export default function Inbox() {
   const [userInfoOpen, setUserInfoOpen] = useState(false);
@@ -96,6 +97,7 @@ export default function Inbox() {
               <PaperPlaneTilt size={24} weight="bold" />
             </button>
           </form>
+          <Giphy />
         </div>
       </div>
 
