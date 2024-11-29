@@ -1,5 +1,6 @@
 import React from 'react'
 import { ChatList, MessageInbox, Sidebar } from '../section/chat'
+import GifModal from '../components/GifModal'
 
 export default function Messages() {
   return (
@@ -15,6 +16,8 @@ export default function Messages() {
         {/* Inbox */}
         <MessageInbox />
       </div>
+
+      <GifModal />
     </div>
   )
 }
