@@ -4,6 +4,8 @@ const initialState = {
     modals: {
         gif: false,
         audio: false,
+        media: false,
+        doc: false,
     },
     selectedGifUrl: "",
 }
@@ -16,8 +18,11 @@ const slice = createSlice({
             state.modals.gif = action.payload.value;
             state.selectedGifUrl = action.payload.url;
         },
-        updateAudioModal(state, action){
-            state.modals.audio = action.payload;
+        updateMediaModal(state, action){
+            state.modals.media = action.payload;
+        },
+        updateDocumentModal(state, action){
+            state.modals.doc = action.payload;
         }
     }
 })
@@ -30,4 +35,12 @@ export const toggleGifModal = (value) => async (dispatch, getState) => {
 
 export const toggleAudioModal = (value) => async (dispatch, getState) => {
     dispatch(slice.actions.updateAudioModal(value));
+}
+
+export const toggleMediaModal = (value) => async (dispatch, getState) => {
+    dispatch(slice.actions.updateMediaModal(value));
+}
+
+export const toggleDocumentModal = (value) => async (dispatch, getState) => {
+    dispatch(slice.actions.updateDocumentModal(value));
 }

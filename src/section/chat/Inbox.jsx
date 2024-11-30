@@ -1,13 +1,10 @@
 import React, { useState } from "react";
 import User01 from "../../images/user/user-01.png";
 import {
-  DotsThree,
   Gif,
-  LinkSimple,
   Microphone,
   PaperPlaneTilt,
   Phone,
-  Smiley,
   VideoCamera,
 } from "@phosphor-icons/react";
 import Dropdown from "../../components/Dropdown";
@@ -16,6 +13,7 @@ import UserInfo from "./UserInfo";
 import Giphy from "../../components/Giphy";
 import { useDispatch } from "react-redux";
 import { toggleAudioModal } from "../../redux/slices/app";
+import Attachment from "../../components/Attachment";
 
 export default function Inbox() {
   const [userInfoOpen, setUserInfoOpen] = useState(false);
@@ -26,8 +24,8 @@ export default function Inbox() {
 
   const handleToggleGif = (e) => {
     e.preventDefault();
-    setGifOpen((prev) =>!prev);
-  }
+    setGifOpen((prev) => !prev);
+  };
 
   const handleToggleUserInfo = () => {
     setUserInfoOpen((prev) => !prev);
@@ -35,8 +33,8 @@ export default function Inbox() {
 
   const handleMicClick = (e) => {
     e.preventDefault();
-    dispatch(toggleAudioModal(true))
-  }
+    dispatch(toggleAudioModal(true));
+  };
   return (
     <>
       <div
@@ -107,9 +105,12 @@ export default function Inbox() {
                   <Microphone size={20} />
                 </button>
                 <button className="hover:text-primary">
-                  <LinkSimple size={20} />
+                  <Attachment />
                 </button>
-                <button className="hover:text-primary" onClick={handleToggleGif}>
+                <button
+                  className="hover:text-primary"
+                  onClick={handleToggleGif}
+                >
                   <Gif size={20} />
                 </button>
                 <button className="hover:text-primary">
@@ -123,7 +124,6 @@ export default function Inbox() {
             </button>
           </form>
           {gifOpen && <Giphy />}
-          
         </div>
       </div>
 
