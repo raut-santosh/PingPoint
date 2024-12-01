@@ -16,6 +16,7 @@ import { toggleAudioModal } from "../../redux/slices/app";
 import Attachment from "../../components/Attachment";
 import MessageSeparater from "../../components/MessageSeparater";
 import TypingIndicator from "../../components/TypingIndicator";
+import {TextMessage} from "../../components/Messages/index"
 
 export default function Inbox() {
   const [userInfoOpen, setUserInfoOpen] = useState(false);
@@ -100,6 +101,8 @@ export default function Inbox() {
             </div>
             <p className="text-xs">1:55pm</p>
           </div>
+
+          <TextMessage author={'Santosh Raut'} content={'Hi, its first msg'} read_receipt="sent" incoming={true} timestamp={'2:44Pm'} />
 
           <div className="max-w-125 ml-auto">
             <div className="mb-2.5 rounded-2xl rounded-br-none bg-primary px-5 py-3">
