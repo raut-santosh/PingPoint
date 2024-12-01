@@ -16,7 +16,7 @@ import { toggleAudioModal } from "../../redux/slices/app";
 import Attachment from "../../components/Attachment";
 import MessageSeparater from "../../components/MessageSeparater";
 import TypingIndicator from "../../components/TypingIndicator";
-import {TextMessage} from "../../components/Messages/index"
+import {DocumentMessage, TextMessage} from "../../components/Messages/index"
 
 export default function Inbox() {
   const [userInfoOpen, setUserInfoOpen] = useState(false);
@@ -94,6 +94,8 @@ export default function Inbox() {
 
           <MessageSeparater />
 
+          <DocumentMessage author={"Sam Colson"} incoming={true} read_receipt="read" timestamp={"4:24Pm"} /> 
+
           <div className="max-w-125">
             <p className="mb-2.5 text-sm font-medium">Andri Thomas</p>
             <div className="mb-2.5 rounded-2xl rounded-tl-none bg-gray px-5 py-3 dark:bg-boxdark-2">
@@ -102,7 +104,7 @@ export default function Inbox() {
             <p className="text-xs">1:55pm</p>
           </div>
 
-          <TextMessage author={'Santosh Raut'} content={'Hi, its first msg https://github.com/raut-santosh'} read_receipt="sent" incoming={true} timestamp={'2:44Pm'} />
+          <TextMessage author={'Santosh Raut'} content={'Hi, its first msg https://github.com/raut-santosh'} read_receipt="delivered" incoming={false} timestamp={'2:44Pm'} />
 
           <div className="max-w-125 ml-auto">
             <div className="mb-2.5 rounded-2xl rounded-br-none bg-primary px-5 py-3">
