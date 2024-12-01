@@ -18,6 +18,9 @@ const slice = createSlice({
             state.modals.gif = action.payload.value;
             state.selectedGifUrl = action.payload.url;
         },
+        updateAudioModal(state, action){
+            state.modals.media = action.payload;
+        },
         updateMediaModal(state, action){
             state.modals.media = action.payload;
         },

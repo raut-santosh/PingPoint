@@ -14,6 +14,7 @@ import Giphy from "../../components/Giphy";
 import { useDispatch } from "react-redux";
 import { toggleAudioModal } from "../../redux/slices/app";
 import Attachment from "../../components/Attachment";
+import MessageSeparater from "../../components/MessageSeparater";
 
 export default function Inbox() {
   const [userInfoOpen, setUserInfoOpen] = useState(false);
@@ -84,6 +85,25 @@ export default function Inbox() {
             <div className="mb-2.5 rounded-2xl rounded-br-none bg-primary px-5 py-3">
               <p className="text-white">
                 Hello, I will check the schedule and inform you
+              </p>
+            </div>
+            <p className="text-xs">1:57pm</p>
+          </div>
+
+          <MessageSeparater />
+
+          <div className="max-w-125">
+            <p className="mb-2.5 text-sm font-medium">Andri Thomas</p>
+            <div className="mb-2.5 rounded-2xl rounded-tl-none bg-gray px-5 py-3 dark:bg-boxdark-2">
+              <p>Ok</p>
+            </div>
+            <p className="text-xs">1:55pm</p>
+          </div>
+
+          <div className="max-w-125 ml-auto">
+            <div className="mb-2.5 rounded-2xl rounded-br-none bg-primary px-5 py-3">
+              <p className="text-white">
+                Hello, at 9 am come 
               </p>
             </div>
             <p className="text-xs">1:57pm</p>
