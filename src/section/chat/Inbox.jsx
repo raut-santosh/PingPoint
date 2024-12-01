@@ -15,6 +15,7 @@ import { useDispatch } from "react-redux";
 import { toggleAudioModal } from "../../redux/slices/app";
 import Attachment from "../../components/Attachment";
 import MessageSeparater from "../../components/MessageSeparater";
+import TypingIndicator from "../../components/TypingIndicator";
 
 export default function Inbox() {
   const [userInfoOpen, setUserInfoOpen] = useState(false);
@@ -76,7 +77,7 @@ export default function Inbox() {
           <div className="max-w-125">
             <p className="mb-2.5 text-sm font-medium">Andri Thomas</p>
             <div className="mb-2.5 rounded-2xl rounded-tl-none bg-gray px-5 py-3 dark:bg-boxdark-2">
-              <p>I want to make an appointment tommarow 2pm to 5pm</p>
+              <p className="dark:text-white">I want to make an appointment tommarow 2pm to 5pm</p>
             </div>
             <p className="text-xs">1:55pm</p>
           </div>
@@ -95,19 +96,19 @@ export default function Inbox() {
           <div className="max-w-125">
             <p className="mb-2.5 text-sm font-medium">Andri Thomas</p>
             <div className="mb-2.5 rounded-2xl rounded-tl-none bg-gray px-5 py-3 dark:bg-boxdark-2">
-              <p>Ok</p>
+              <p className="dark:text-white">Ok</p>
             </div>
             <p className="text-xs">1:55pm</p>
           </div>
 
           <div className="max-w-125 ml-auto">
             <div className="mb-2.5 rounded-2xl rounded-br-none bg-primary px-5 py-3">
-              <p className="text-white">
-                Hello, at 9 am come 
-              </p>
+              <p className="text-white">Hello, at 9 am come</p>
             </div>
             <p className="text-xs">1:57pm</p>
           </div>
+
+          <TypingIndicator />
         </div>
 
         {/* input section */}
