@@ -16,7 +16,7 @@ import { toggleAudioModal } from "../../redux/slices/app";
 import Attachment from "../../components/Attachment";
 import MessageSeparater from "../../components/MessageSeparater";
 import TypingIndicator from "../../components/TypingIndicator";
-import {DocumentMessage, TextMessage} from "../../components/Messages/index"
+import {DocumentMessage, TextMessage, VoiceMessage} from "../../components/Messages/index"
 
 export default function Inbox() {
   const [userInfoOpen, setUserInfoOpen] = useState(false);
@@ -95,6 +95,8 @@ export default function Inbox() {
           <MessageSeparater />
 
           <DocumentMessage author={"Sam Colson"} incoming={true} read_receipt="read" timestamp={"4:24Pm"} /> 
+
+          <VoiceMessage incoming={false} read_receipt={'delivered'} timestamp={'4.27PM'} />
 
           <div className="max-w-125">
             <p className="mb-2.5 text-sm font-medium">Andri Thomas</p>
