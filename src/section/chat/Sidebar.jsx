@@ -38,7 +38,7 @@ export default function () {
     setSelected(key);
   };
   return (
-    <div className="flex flex-col border-r border-stroke p-2 dark:border-strokedark">
+    <div className="flex flex-col border-r border-stroke p-2 dark:border-strokedark hidden xl:block">
       {/* <div className="mx-auto border rounded-md border-stroke p-2 dark:border-strokedark">
         <Chat size={24} />
       </div> */}
